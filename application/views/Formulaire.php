@@ -1,53 +1,75 @@
-<?php
-
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>"  rel="stylesheet" meadia="all">
+    <link href="<?php echo base_url("assets/css/bootstrap.css"); ?>" rel="stylesheet" meadia="all">
     <title>Document</title>
 </head>
-<body style="background-color: whitesmoke">
-    <div class="container centered col-8" style="background-color: #aaaaaa">
-        <h3>Formulaire de vente</h3>
-        <?php echo form_open(base_url('traitform/insert'),['class'=>'col-10','method'=>'get']) ?>
-        <div class="mb-3">
-            <?php echo form_label('Label Vente','label Vente',['class'=>'form-label']) ?>
-            <?php echo form_input(['class'=>'form-control','name'=>'labelvente']) ?>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Formulaire de recherche</h2>
+            <div class="col-md-12">
+            <form action="<?php echo base_url('RechercheController/recherche');?>" method="GET">
+            <div class="row">
+                <div class="col">
+                <label class="form-check-label" for="labelProduit">Label Produit:</label>
+                <input type="text" class="form-control" placeholder="First name" id="labelProduit"  name="label" required>
+                </div>
+                <div class="col">
+                <label class="form-check-label" for="IdFabriquant">Fabriquant:</label>
+                <input type="number" min="0" class="form-control" placeholder="IdFabriquant" id="IdFabriquant" name="fabriq" required>
+                </div>
+                <div class="col">
+                <label class="form-check-label" for="PrixMin">Prix minimum:</label>
+                <input type="text" class="form-control" placeholder="Prix minimum" id="PrixMin" name="Pmin" required>
+                </div>
+                <div class="col">
+                <label class="form-check-label" for="prixMax">Prix maximum:</label>
+                <input type="text" class="form-control" placeholder="Prix maximum" id="prixMax" name="Pmax" required>
+                </div>
+            </div>
+            <div class="row align-center">
+                <div class="col">
+                <input type="submit" value="valider" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+                
+            </div>
         </div>
-        <div class="mb-3">
-            <?php echo form_label('Reference bon de commande','Reference bon de commande',['class'=>'form-label']) ?>
-            <select name="Ref" id="">
-                <?php for($i=0;$i<count($Ref);$i++) {?>
-                    <option value="<?php echo $Ref[$i]['idBonDeCommande'] ?>"><?php echo $Ref[$i]['label'] ?></option>
-                <?php }?>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <?php echo form_label('Reference Proformat','Reference Proformat',['class'=>'form-label']) ?>
-            <?php echo form_input(['type'=>'text','class'=>'form-control','name'=>'RefProform']) ?>
-        </div>
-
-        <div class="mb-3">
-            <?php echo form_label('Date de Saisie','Date de Saisie',['class'=>'form-label']) ?>
-            <?php echo form_input(['type'=>'date','class'=>'form-control','name'=>'date']) ?>
-        </div>
-        <div class="mb-3">
-            <?php echo form_label('nif','nif',['class'=>'form-label']) ?>
-            <?php echo form_input(['type'=>'text','class'=>'form-control','name'=>'nif']) ?>
-        </div>
-        <div class="mb-3">
-            <?php echo form_label('Description','Description',['class'=>'form-label']) ?>
-            <?php echo form_textarea(['type'=>'text','class'=>'form-control','name'=>'description']) ?>
-        </div>
-        <button type="submit" class="btn btn-primary">Valider</button>
-        <?php echo form_close() ?>
     </div>
+    <?php if(isset($results)) { ?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">idProduit</th>
+            <th scope="col">Nom produit</th>
+            <th scope="col">Fabriquant</th>
+            <th scope="col">Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for ($i = 0; $i < count($results); $i++) {?>
+            <tr>
+                <th scope="row"><?php echo $results[$i]['id'] ?></th>
+                <td><?php echo $results[$i]['label'] ?></td>
+                <td><?php echo $results[$i]['idFabricant'] ?></td>
+                <td><?php echo $results[$i]['prixUnitaire'] ?></td>
+             </tr>
+             <?php  } ?>
+        </tbody>
+        </table>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
 
 </body>
 </html>
