@@ -14,7 +14,7 @@
 <body style="background-color: whitesmoke">
     <div class="container centered col-8" style="background-color: #aaaaaa">
         <h3>Formulaire de vente</h3>
-        <?php echo form_open(base_url('traitform/insert'),['class'=>'col-10','method'=>'get']) ?>
+        <?php echo form_open(site_url('Traitform/insert'),['class'=>'col-10','method'=>'get']) ?>
         <div class="mb-3">
             <?php echo form_label('Label Vente','label Vente',['class'=>'form-label']) ?>
             <?php echo form_input(['class'=>'form-control','name'=>'labelvente']) ?>
