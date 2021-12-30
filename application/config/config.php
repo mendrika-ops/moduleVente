@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 // $config['base_url'] = 'http://localhost:75/Gestion';
 
-$config['base_url'] = 'http://localhost/Module_vente/';
+$config['base_url'] = 'http://localhost/moduleVente/';
 
 
 /*

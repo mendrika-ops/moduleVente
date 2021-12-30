@@ -12,7 +12,8 @@ class Recherche extends CI_Model
         $sql="SELECT * from produit where 1<2 ";
         if($label !=''){
             $sql .="AND label LIKE '%%%s%%' ";
-            $sql=sprintf($sql ,mysql_real_escape_string($label));
+            //$sql=sprintf($sql ,mysql_real_escape_string($label));
+            $sql=sprintf($sql ,$label);
         }
         if($fabriq  !=''){
             $sql .="AND idFabricant=".$fabriq." " ;
