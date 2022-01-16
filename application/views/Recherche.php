@@ -60,7 +60,7 @@
         <tbody>
             <?php for ($i = 0; $i < count($results); $i++) {?>
             <tr>
-                <form action="" method="post">
+                <form action="<?php base_url('/AjouteDetail/ajoute');?>" method="post">
                     <th scope="row"><?php echo $results[$i]['id'] ?></th>
                     <td><?php echo $results[$i]['label'] ?></td>
                     <td><?php echo $results[$i]['idFabricant'] ?></td>

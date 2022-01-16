@@ -58,4 +58,8 @@ class BonLiv extends CI_Model
         $this->db->query($sql);
         return $this->getBonLivraison($labelvente)[0]['id'];
     }
+    public function ajouteDetail($idBonLivraison,$idProduit,$quantite){
+        $sql=sprintf("insert into bonLivrasondetail values (%u,%u,1,%u,now())",$idBonLivraison,$idProduit,$quantite);
+        $this->db->query($sql);
+    }
 }
