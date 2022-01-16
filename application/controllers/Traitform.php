@@ -14,7 +14,6 @@ class Traitform extends CI_Controller
         $this->load->model('BonLiv');
         $this->BonLiv->insert($labelvente,$Ref,$date,$nif,$description,$RefProform);
         $this->load->helper('form');
-        $this->load->model('BonLiv');
         $data['Ref']=$this->BonLiv->RefBonCom();
         $this->load->view('Recherche',$data);
     }
