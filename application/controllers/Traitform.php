@@ -11,9 +11,11 @@ class Traitform extends CI_Controller
         $nif=$this->input->get('nif');
         $description=$this->input->get('description');
         $RefProform=$this->input->get('RefProform');
+
         $this->load->model('BonLiv');
-        $this->BonLiv->insert($labelvente,$Ref,$date,$nif,$description,$RefProform);
+        $idBonLivraison = $this->BonLiv->insert($labelvente,$Ref,$date,$nif,$description,$RefProform);
         $this->load->helper('form');
+        $this->session->set_userdata('idBonL',$idBonLivraison);
         $data['Ref']=$this->BonLiv->RefBonCom();
         $this->load->view('Recherche',$data);
     }

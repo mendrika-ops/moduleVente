@@ -53,15 +53,21 @@
             <th scope="col">Nom produit</th>
             <th scope="col">Fabriquant</th>
             <th scope="col">Prix</th>
+            <th scope="col">Quantité</th>
+            <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <?php for ($i = 0; $i < count($results); $i++) {?>
             <tr>
-                <th scope="row"><?php echo $results[$i]['id'] ?></th>
-                <td><?php echo $results[$i]['label'] ?></td>
-                <td><?php echo $results[$i]['idFabricant'] ?></td>
-                <td><?php echo $results[$i]['prixUnitaire'] ?></td>
+                <form action="" method="post">
+                    <th scope="row"><?php echo $results[$i]['id'] ?></th>
+                    <td><?php echo $results[$i]['label'] ?></td>
+                    <td><?php echo $results[$i]['idFabricant'] ?></td>
+                    <td><?php echo $results[$i]['prixUnitaire'] ?></td>
+                    <td><input type="number"  name="quantite" style="width: 50px;"></td>
+                    <td><input type="submit"  name="" value="ajouter" style="width: 90px;"></td>
+                </form>
              </tr>
              <?php  } ?>
         </tbody>

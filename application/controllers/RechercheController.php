@@ -42,7 +42,7 @@ class RechercheController extends CI_Controller {
 		$result=  $this->Recherche->Result( $label,$fabriq,$Pmin,$Pmax);
 		
 		$data['results']=$result;
-		$this->load->view('Formulaire',$data);
+		$this->load->view('Recherche',$data);
 
 	}
 }
