@@ -23,15 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/moduleVente/';
-=======
-
-// $config['base_url'] = 'http://localhost:75/Gestion';
-
-$config['base_url'] = 'http://localhost/moduleVente/';
-
->>>>>>> Recherche_Cli
 
 /*
 |--------------------------------------------------------------------------

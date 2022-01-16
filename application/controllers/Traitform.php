@@ -16,6 +16,6 @@ class Traitform extends CI_Controller
         $this->load->helper('form');
         $this->load->model('BonLiv');
         $data['Ref']=$this->BonLiv->RefBonCom();
-        $this->load->view('Formulaire',$data);
+        $this->load->view('Recherche',$data);
     }
 }
