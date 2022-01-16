@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body style="background-color: whitesmoke">
-    <div class="container centered col-8" style="background-color: #aaaaaa">
+    <div class="container centered col-8" >
         <h3>Formulaire de vente</h3>
         <?php echo form_open(site_url('Traitform/insert'),['class'=>'col-10','method'=>'get']) ?>
         <div class="mb-3">
