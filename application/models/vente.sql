@@ -73,7 +73,7 @@ create table unite (
                        idTaille int,
                        label varchar(20),
                        foreign key(idTaille) references taille(id)
-)
+);
 
 insert into unite values (null,1,'CARTON');
 
