@@ -26,7 +26,7 @@ class RechercheController extends CI_Controller {
 
 	public function index()
 	{
-		 $this->load->view('Formulaire');
+		 $this->load->view('Recherche');
          
 		
         
